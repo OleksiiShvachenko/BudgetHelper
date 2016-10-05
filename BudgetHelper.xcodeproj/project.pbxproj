@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		18257AE01DA2923F00A7E8B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18257ADF1DA2923F00A7E8B3 /* AppDelegate.swift */; };
-		18257AE21DA2923F00A7E8B3 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18257AE11DA2923F00A7E8B3 /* DashboardViewController.swift */; };
 		18257AE51DA2923F00A7E8B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18257AE31DA2923F00A7E8B3 /* Main.storyboard */; };
 		18257AE81DA2923F00A7E8B3 /* BudgetHelper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18257AE61DA2923F00A7E8B3 /* BudgetHelper.xcdatamodeld */; };
 		18257AEA1DA2923F00A7E8B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18257AE91DA2923F00A7E8B3 /* Assets.xcassets */; };
 		18257AED1DA2923F00A7E8B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18257AEB1DA2923F00A7E8B3 /* LaunchScreen.storyboard */; };
 		18FC54131DA4F3BB007F3B78 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18FC54121DA4F3BB007F3B78 /* CloudKit.framework */; };
 		18FC54181DA4F638007F3B78 /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18FC54171DA4F638007F3B78 /* ReSwift.framework */; };
-		18FC54201DA50C4F007F3B78 /* NewBudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FC541F1DA50C4F007F3B78 /* NewBudgetViewController.swift */; };
+		18FC54291DA51566007F3B78 /* ReSwiftRouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18FC54281DA51566007F3B78 /* ReSwiftRouter.framework */; };
+		18FC54321DA51678007F3B78 /* NewBudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FC542E1DA51678007F3B78 /* NewBudgetViewController.swift */; };
+		18FC54331DA51678007F3B78 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FC54301DA51678007F3B78 /* DashboardViewController.swift */; };
+		18FC54351DA5175E007F3B78 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FC54341DA5175E007F3B78 /* AppState.swift */; };
+		18FC54371DA5176E007F3B78 /* BudgetReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FC54361DA5176E007F3B78 /* BudgetReducer.swift */; };
+		18FC54391DA51775007F3B78 /* BudgetActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FC54381DA51775007F3B78 /* BudgetActions.swift */; };
+		18FC549D1DA52F1D007F3B78 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FC549C1DA52F1D007F3B78 /* AppReducer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		18257ADC1DA2923F00A7E8B3 /* BudgetHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BudgetHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18257ADF1DA2923F00A7E8B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		18257AE11DA2923F00A7E8B3 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		18257AE41DA2923F00A7E8B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18257AE71DA2923F00A7E8B3 /* BudgetHelper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BudgetHelper.xcdatamodel; sourceTree = "<group>"; };
 		18257AE91DA2923F00A7E8B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -30,7 +34,13 @@
 		18FC54101DA4F3B9007F3B78 /* BudgetHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BudgetHelper.entitlements; sourceTree = "<group>"; };
 		18FC54121DA4F3BB007F3B78 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		18FC54171DA4F638007F3B78 /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/iOS/ReSwift.framework; sourceTree = "<group>"; };
-		18FC541F1DA50C4F007F3B78 /* NewBudgetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewBudgetViewController.swift; sourceTree = "<group>"; };
+		18FC54281DA51566007F3B78 /* ReSwiftRouter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwiftRouter.framework; path = Carthage/Build/iOS/ReSwiftRouter.framework; sourceTree = "<group>"; };
+		18FC542E1DA51678007F3B78 /* NewBudgetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewBudgetViewController.swift; sourceTree = "<group>"; };
+		18FC54301DA51678007F3B78 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		18FC54341DA5175E007F3B78 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		18FC54361DA5176E007F3B78 /* BudgetReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetReducer.swift; sourceTree = "<group>"; };
+		18FC54381DA51775007F3B78 /* BudgetActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetActions.swift; sourceTree = "<group>"; };
+		18FC549C1DA52F1D007F3B78 /* AppReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +50,7 @@
 			files = (
 				18FC54131DA4F3BB007F3B78 /* CloudKit.framework in Frameworks */,
 				18FC54181DA4F638007F3B78 /* ReSwift.framework in Frameworks */,
+				18FC54291DA51566007F3B78 /* ReSwiftRouter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,8 +77,10 @@
 		18257ADE1DA2923F00A7E8B3 /* BudgetHelper */ = {
 			isa = PBXGroup;
 			children = (
-				18FC541E1DA50C3F007F3B78 /* Budget */,
-				18FC54191DA4FD9B007F3B78 /* Dashboard */,
+				18FC542C1DA51678007F3B78 /* Screens */,
+				18FC542A1DA51678007F3B78 /* Actions */,
+				18FC542B1DA51678007F3B78 /* Reducers */,
+				18FC54311DA51678007F3B78 /* State */,
 				18257AE31DA2923F00A7E8B3 /* Main.storyboard */,
 				18257ADF1DA2923F00A7E8B3 /* AppDelegate.swift */,
 				18257AEB1DA2923F00A7E8B3 /* LaunchScreen.storyboard */,
@@ -82,26 +95,61 @@
 		18FC54111DA4F3BB007F3B78 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				18FC54281DA51566007F3B78 /* ReSwiftRouter.framework */,
 				18FC54171DA4F638007F3B78 /* ReSwift.framework */,
 				18FC54121DA4F3BB007F3B78 /* CloudKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		18FC54191DA4FD9B007F3B78 /* Dashboard */ = {
+		18FC542A1DA51678007F3B78 /* Actions */ = {
 			isa = PBXGroup;
 			children = (
-				18257AE11DA2923F00A7E8B3 /* DashboardViewController.swift */,
+				18FC54381DA51775007F3B78 /* BudgetActions.swift */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
+		18FC542B1DA51678007F3B78 /* Reducers */ = {
+			isa = PBXGroup;
+			children = (
+				18FC549C1DA52F1D007F3B78 /* AppReducer.swift */,
+				18FC54361DA5176E007F3B78 /* BudgetReducer.swift */,
+			);
+			path = Reducers;
+			sourceTree = "<group>";
+		};
+		18FC542C1DA51678007F3B78 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				18FC542D1DA51678007F3B78 /* Budget */,
+				18FC542F1DA51678007F3B78 /* Dashboard */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		18FC542D1DA51678007F3B78 /* Budget */ = {
+			isa = PBXGroup;
+			children = (
+				18FC542E1DA51678007F3B78 /* NewBudgetViewController.swift */,
+			);
+			path = Budget;
+			sourceTree = "<group>";
+		};
+		18FC542F1DA51678007F3B78 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				18FC54301DA51678007F3B78 /* DashboardViewController.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
 		};
-		18FC541E1DA50C3F007F3B78 /* Budget */ = {
+		18FC54311DA51678007F3B78 /* State */ = {
 			isa = PBXGroup;
 			children = (
-				18FC541F1DA50C4F007F3B78 /* NewBudgetViewController.swift */,
+				18FC54341DA5175E007F3B78 /* AppState.swift */,
 			);
-			path = Budget;
+			path = State;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -114,7 +162,7 @@
 				18257AD81DA2923E00A7E8B3 /* Sources */,
 				18257AD91DA2923E00A7E8B3 /* Frameworks */,
 				18257ADA1DA2923E00A7E8B3 /* Resources */,
-				18FC54161DA4F5C3007F3B78 /* ShellScript */,
+				18FC54161DA4F5C3007F3B78 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -182,14 +230,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		18FC54161DA4F5C3007F3B78 /* ShellScript */ = {
+		18FC54161DA4F5C3007F3B78 /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/ReSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReSwiftRouter.framework",
 			);
+			name = Carthage;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -203,10 +253,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18FC54201DA50C4F007F3B78 /* NewBudgetViewController.swift in Sources */,
-				18257AE21DA2923F00A7E8B3 /* DashboardViewController.swift in Sources */,
 				18257AE01DA2923F00A7E8B3 /* AppDelegate.swift in Sources */,
+				18FC54371DA5176E007F3B78 /* BudgetReducer.swift in Sources */,
+				18FC54351DA5175E007F3B78 /* AppState.swift in Sources */,
 				18257AE81DA2923F00A7E8B3 /* BudgetHelper.xcdatamodeld in Sources */,
+				18FC54321DA51678007F3B78 /* NewBudgetViewController.swift in Sources */,
+				18FC54391DA51775007F3B78 /* BudgetActions.swift in Sources */,
+				18FC549D1DA52F1D007F3B78 /* AppReducer.swift in Sources */,
+				18FC54331DA51678007F3B78 /* DashboardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

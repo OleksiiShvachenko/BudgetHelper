@@ -8,6 +8,10 @@
 
 import UIKit
 import CoreData
+import ReSwift
+import ReSwiftRouter
+
+let store = Store<AppState>(reducer: AppReducer(), state: nil)
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
