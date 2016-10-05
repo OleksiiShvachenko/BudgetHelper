@@ -7,6 +7,23 @@
     </dependencies>
     <scenes>
         <!--Budget-->
+        <scene sceneID="lwO-hY-Gtk">
+            <objects>
+                <navigationController id="qUN-Xk-jSh" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Budget" image="budget_icon" id="mVU-MD-1p6"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9g3-Sq-5EO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ZVs-cL-rTd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CdR-jc-Pbm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1527" y="-1094"/>
+        </scene>
+        <!--Budget-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="DashboardViewController" customModule="BudgetHelper" customModuleProvider="target" sceneMemberID="viewController">
@@ -48,11 +65,17 @@
                             <constraint firstItem="26C-Hd-R8j" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wyg-tW-x5D"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Budget" image="budget_icon" id="DoK-HH-bIB"/>
+                    <navigationItem key="navigationItem" title="Budget" id="W58-Kx-ddw">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="9hb-w4-PfP">
+                            <connections>
+                                <segue destination="miy-9K-ySk" kind="show" id="Nya-nu-AJ4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-164" y="-680"/>
+            <point key="canvasLocation" x="-714" y="-1094"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="2c4-4Q-WKn">
@@ -64,13 +87,13 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="WJf-ZY-6wp"/>
+                        <segue destination="qUN-Xk-jSh" kind="relationship" relationship="viewControllers" id="cfS-hL-qKy"/>
                         <segue destination="3qS-ja-nlZ" kind="relationship" relationship="viewControllers" id="DnB-Hu-Okp"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tQb-PO-A3S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-942" y="-342"/>
+            <point key="canvasLocation" x="-2308" y="-735"/>
         </scene>
         <!--Settings-->
         <scene sceneID="x9P-Z5-zhT">
@@ -87,7 +110,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V8p-9F-zod" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1098" y="373"/>
+            <point key="canvasLocation" x="-1527" y="-366"/>
         </scene>
         <!--Settings-->
         <scene sceneID="3NL-um-iZ2">
@@ -132,7 +155,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UbP-WD-jI1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-164" y="17"/>
+            <point key="canvasLocation" x="-673" y="-367"/>
         </scene>
         <!--Budget-->
         <scene sceneID="JuK-A0-JFS">
@@ -167,15 +190,20 @@
                             <constraint firstItem="haU-Zd-X0P" firstAttribute="centerX" secondItem="JcY-xV-dz9" secondAttribute="centerX" id="gJd-eM-9GV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Budget" id="Kwu-a1-jQb"/>
+                    <navigationItem key="navigationItem" title="Budget" id="Kwu-a1-jQb">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="eai-B1-N0c"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GBg-PA-jfw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="645.60000000000002" y="-288.30584707646182"/>
+            <point key="canvasLocation" x="126" y="-735"/>
         </scene>
     </scenes>
     <resources>
         <image name="budget_icon" width="24" height="24"/>
         <image name="settings_icon" width="24" height="24"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Nya-nu-AJ4"/>
+    </inferredMetricsTieBreakers>
 </document>
