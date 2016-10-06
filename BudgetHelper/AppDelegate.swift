@@ -17,10 +17,33 @@ let store = Store<AppState>(reducer: AppReducer(), state: nil)
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var router: Router<AppState>!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        window = UIWindow(frame: UIScreen.main.bounds)
+       
+        /*
+         Set a dummy VC to satisfy UIKit
+         Router will set correct VC throug async call which means
+         window would not have rootVC at completion of this method
+         which causes a crash.
+         */
+        window?.rootViewController = UIViewController()
+        
+        let rootRoutable = RootRoutable(window: window!)
+        
+        router = Router(store: store, rootRoutable: rootRoutable) { state in
+            return state.navigationState
+        }
+        
+        if store.state.budget != nil {
+            store.dispatch(ReSwiftRouter.SetRouteAction([dashboardRoute]))
+        } else {
+            store.dispatch(ReSwiftRouter.SetRouteAction([createBudgetRoute]))
+        }
+        
+        window?.makeKeyAndVisible()
+        
         return true
     }
 

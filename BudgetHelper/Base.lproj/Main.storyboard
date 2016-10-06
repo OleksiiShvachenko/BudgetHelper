@@ -49,7 +49,7 @@
                                                 <color key="textColor" red="0.25416143718900885" green="0.84974234205691224" blue="0.33216849152393119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₴ left" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KG6-Fl-3m8">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₴" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KG6-Fl-3m8">
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -77,10 +77,10 @@
             </objects>
             <point key="canvasLocation" x="-714" y="-1094"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Dashboard Tab Bar Controller-->
         <scene sceneID="2c4-4Q-WKn">
             <objects>
-                <tabBarController id="cZL-fe-9b7" sceneMemberID="viewController">
+                <tabBarController id="cZL-fe-9b7" customClass="DashboardTabBarController" customModule="BudgetHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="8sx-Qn-lIV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -180,6 +180,9 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                        <connections>
+                                            <action selector="textFieldDidEdit:" destination="miy-9K-ySk" eventType="editingChanged" id="GoE-wo-ZQz"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -191,12 +194,36 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Budget" id="Kwu-a1-jQb">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="eai-B1-N0c"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="eai-B1-N0c">
+                            <connections>
+                                <action selector="didPressOnSave:" destination="miy-9K-ySk" id="2po-Il-G03"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="expenseTextFiled" destination="lpW-dn-SVF" id="5VN-y0-YpH"/>
+                        <outlet property="titleLabel" destination="jbk-tW-F2I" id="9vC-fR-vf6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GBg-PA-jfw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="126" y="-735"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="PRp-0d-WMQ">
+            <objects>
+                <navigationController storyboardIdentifier="Budget Edit" id="VRM-tq-LcL" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xa7-61-uNX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="miy-9K-ySk" kind="relationship" relationship="rootViewController" id="RVL-1g-ae3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bDF-TV-apZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="126" y="-1428"/>
         </scene>
     </scenes>
     <resources>
@@ -204,6 +231,6 @@
         <image name="settings_icon" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Nya-nu-AJ4"/>
+        <segue reference="RVL-1g-ae3"/>
     </inferredMetricsTieBreakers>
 </document>

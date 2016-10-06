@@ -7,29 +7,67 @@
 //
 
 import UIKit
+import ReSwift
 
-class NewBudgetViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+extension NewBudgetViewController {
+    struct ViewModel {
+        let title: String
+        let currencySumbol: String
+        let enterText: (String) -> Void
+        let saveAction: () -> Void
+        
+        init(state: AppState) {
+            if state.budget != nil {
+                title = "Set new Budget:"
+            } else {
+                title = "Add expenses:"
+            }
+            currencySumbol = NSLocale.current.currencySymbol!
+            saveAction = {
+                
+            }
+            enterText = { text in
+            }
+        }
     }
+}
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+class NewBudgetViewController: UIViewController, StoreSubscriber {
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var expenseTextFiled: UITextField!
+    
+    var viewModel: ViewModel! {
+        didSet {
+            render()
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        store.subscribe(self, selector: ViewModel.init)
     }
-    */
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        store.unsubscribe(self)
+    }
+    
+    func newState(state: ViewModel) {
+        viewModel = state
+    }
 
+    func render() {
+        titleLabel.text = viewModel.title;
+        expenseTextFiled.placeholder = viewModel.currencySumbol
+    }
+    
+    @IBAction func textFieldDidEdit(_ sender: UITextView) {
+        viewModel.enterText(sender.text)
+    }
+    
+    @IBAction func didPressOnSave(_ sender: AnyObject) {
+        viewModel.saveAction()
+    }
 }

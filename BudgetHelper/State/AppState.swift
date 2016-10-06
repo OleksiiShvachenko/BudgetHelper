@@ -6,11 +6,10 @@
 //  Copyright © 2015 DigiTales. All rights reserved.
 //
 
-import Foundation
 import ReSwift
 import ReSwiftRouter
 
 struct AppState: StateType, HasNavigationState {
-    var budget: Int?
+    var budget: Float? = nil
     var navigationState: NavigationState
 }

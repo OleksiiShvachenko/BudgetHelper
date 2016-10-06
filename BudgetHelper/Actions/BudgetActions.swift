@@ -1,36 +1,16 @@
 //
-//  CounterActions.swift
-//  Meet
+//  BudgetActions.swift
+//  BudgetHelper
 //
-//  Created by Benjamin Encz on 12/1/15.
-//  Copyright © 2015 DigiTales. All rights reserved.
+//  Created by Oleksii Shvachenko on 03.10.16.
+//  Copyright © 2016 shalex. All rights reserved.
 //
 
-import Foundation
 import ReSwift
 
-struct CounterActionIncrease: StandardActionConvertible {
-
-    static let type = "COUNTER_ACTION_INCREASE"
-
-    init() {}
-    init(_ standardAction: StandardAction) {}
-
-    func toStandardAction() -> StandardAction {
-        return StandardAction(type: CounterActionIncrease.type, payload: [:], isTypedAction: true)
-    }
-
+struct SetBudget: Action {
+    let budget: Float;
 }
-
-struct CounterActionDecrease: StandardActionConvertible {
-
-    static let type = "COUNTER_ACTION_DECREASE"
-
-    init() {}
-    init(_ standardAction: StandardAction) {}
-
-    func toStandardAction() -> StandardAction {
-        return StandardAction(type: CounterActionDecrease.type, payload: [:], isTypedAction: true)
-    }
-
+struct AddExpenses: Action {
+    let expenses: Float;
 }

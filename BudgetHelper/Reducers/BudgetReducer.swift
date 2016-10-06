@@ -9,14 +9,14 @@
 import Foundation
 import ReSwift
 
-func budgetReducer(action: Action, budget: Int?) -> Int {
-    var budget = budget ?? 0
+func budgetReducer(action: Action, budget: Float?) -> Float? {
+    var budget = budget
 
     switch action {
-    case _ as CounterActionIncrease:
-        budget += 1
-    case _ as CounterActionDecrease:
-        budget -= 1
+    case let action as SetBudget:
+        budget = action.budget
+    case let action as AddExpenses:
+        budget! -= action.expenses
     default:
         break
     }
